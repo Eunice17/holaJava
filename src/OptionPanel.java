@@ -29,9 +29,17 @@ public class OptionPanel {
 	public static void consoleInputs() {
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Ingrese algo por consola:");
-		String entrada = scanner.nextLine();
-		System.out.println("Esto es lo que ingresaste:"+" "+entrada);
+		try {
+			System.out.println("Ingrese un número por consola o muere");
+			int entrada = scanner.nextInt();
+			System.out.println("Esto es lo que ingresaste:"+" "+entrada);
+			
+		}catch(Exception e) {
+			System.out.println("Debe de ingresar enteros");
+			consoleInputs();
+			System.exit(1);
+		}
+ 		
 		
 		}
 	}
